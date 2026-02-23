@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Struktur Anggota | Mutu Orchestra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    margin:0;
+    font-family:'Poppins',sans-serif;
+    background:#0f0f0f;
+    color:white;
+}
+
+header{
+    text-align:center;
+    padding:60px 20px;
+    background:black;
+}
+header h1{
+    color:gold;
+    font-size:40px;
+}
+
+section{
+    padding:60px 10%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+button{
+    padding:12px 25px;
+    border:none;
+    background:var(--primary);
+    cursor:pointer;
+    font-weight:bold;
+    border-radius:30px;
+    margin-top:20px;
+    background-color: rgb(245, 245, 11);
+}
+
+.member {
+    position: relative;
+    overflow: hidden;
+}
+
+.bio{
+    position:absolute;
+    bottom:-100%;
+    left:0;
+    width:100%;
+    background:rgba(0,0,0,0.9);
+    padding:20px;
+    transition:0.4s;
+}
+
+.member:hover .bio{
+    bottom:0;
+}
+
+.team-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+}
+
+.member{
+    background:#1c1c1c;
+    border-radius:20px;
+    padding:20px;
+    text-align:center;
+    transition:0.4s;
+}
+
+.member:hover{
+    transform:translateY(-10px);
+}
+
+.member img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.role{
+    color:gold;
+    font-weight:bold;
+    margin-top:10px;
+}
+
+.generation{
+    margin-top:5px;
+    font-size:13px;
+    background:gold;
+    color:black;
+    display:inline-block;
+    padding:4px 10px;
+    border-radius:20px;
+}
+</style>
+</head>
+
+<body>
+
+    
+
+<header>
+    <h1>Struktur Mutu Orchestra</h1>
+    <p>SMKS TI Muhammadiyah Cikampek</p>
+     <button onclick="window.location.href='index.html'"><b>Back To Menu</b></button>
+</header>
+
+<!-- COACH -->
+<section>
+    <div class="section-title">
+        <h2>Coach</h2>
+    </div>
+    <div class="team-grid">
+        <div class="member">
+            <img src="Ft-anggota/WhatsApp Image 2026-01-21 at 20.51.56.jpeg" width="100%">
+            <h3>M Akbar Mubarok S.Sn</h3>
+            <div class="role">Coach</div>
+            <p>Memegang: Conductor</p>
+            <div class="generation">Pembina</div>
+        </div>
+    </div>
+</section>
+
+<!-- ASSISTANT COACH -->
+<section>
+    <div class="section-title">
+        <h2>Assistant Coach</h2>
+    </div>
+        <div class="team-grid">
+            <div class="member">
+                <img src="Ft-anggota/Rafa.jpeg">
+                <h3>Raffa Arrizky</h3>
+                <div class="role">Assistant Coach</div>
+                <p>Memegang: Band Instrument</p>
+                <div class="generation">Generasi 6</div>
+            </div>
+        </div>
+</section>
+
+<!-- ANGGOTA -->
+<section>
+    <div class="section-title">
+        <h2>Anggota</h2>
+    </div>
+
+    <!-- FILTER -->
+    <div style="text-align:center;margin-bottom:30px;">
+        <button onclick="filterGen('all')"><b>Semua</b></button>
+        <button onclick="filterGen('2025')"><b>Generasi 10</b></button>
+        <button onclick="filterGen('2024')"><b>Generasi 9</b></button>
+    </div>
+
+    <div class="team-grid">
+        <div class="member" data-gen="2025">
+    <img src="Ft-anggota/IMG-20251107-WA0035.jpg">
+    <h3>Muhamad Pratama Aksena Saka Nugraha</h3>
+    <div class="role">Cello</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+        <div class="member" data-gen="2025">
+    <img height="" src="Ft-anggota/TABINA HYLMI RAMADHANI.jpeg">
+    <h3>TABINA HYLMI RAMADHANI</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+    
+        <div class="member" data-gen="2025">
+            <img src="Ft-anggota/UMAY.jpeg">
+            <h3>UMAIR HIROMASA KHAIR</h3>
+            <div class="role">Drumer</div>
+            <div class="generation">Generasi 10</div>
+
+            <!-- <div class="bio">
+                <p>Berpengalaman tampil di 10+ event. Spesialis musik klasik.</p>
+            </div> -->
+        </div>
+        
+                <div class="member" data-gen="2025">
+    <img src="Ft-anggota/SATRIA.jpeg">
+    <h3>SATRIA</h3>
+    <div class="role">ANGKLUNG</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+            <div class="member" data-gen="2025">
+    <img src="Ft-anggota/RAHMA OKTAVIA.jpeg">
+    <h3>RAHMA OKTAVIA</h3>
+    <div class="role">KEYBOARD</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+    
+    
+        <div class="member" data-gen="2025">
+    <img src="Ft-anggota/indahku dysta sakinah.jpeg">
+    <h3>Indahku Dysta Sakinah</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+        <div class="member" data-gen="2025">
+    <img src="Ft-anggota/safa aurora ramadhani.jpeg">
+    <h3>Safa Aurora Ramadhani</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+            <div class="member" data-gen="2025">
+    <img src="Ft-anggota/Muhammad Adam mufid.jpeg">
+    <h3>Muhammad Adam mufid</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+                <div class="member" data-gen="2025">
+    <img src="Ft-anggota/Rindu nurfitriani rahayu.jpeg">
+    <h3>Rindu Nurfitriani Rahayu</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+                <div class="member" data-gen="2025">
+    <img src="Ft-anggota/Keysha Mulia Azzahra.jpeg">
+    <h3>Keysha Mulia Azzahra</h3>
+    <div class="role">Violin</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+                <div class="member" data-gen="2025">
+    <img src="Ft-anggota/Rainza Anindyta Ruswandi.jpeg">
+    <h3>Rainza Anindyta Ruswandi</h3>
+    <div class="role">Viola</div>
+    <div class="generation">Generasi 10</div>
+    
+    <!-- <div class="bio">
+        <p>Ahli rhythm dan modern orchestra performance.</p>
+    </div> -->
+    </div>
+
+
+    </div>
+</section>
+
+</body>
+<script>
+function filterGen(gen){
+    const members = document.querySelectorAll(".member");
+
+    members.forEach(member=>{
+        if(gen === "all"){
+            member.style.display="block";
+        } else {
+            if(member.getAttribute("data-gen") === gen){
+                member.style.display="block";
+            } else {
+                member.style.display="none";
+            }
+        }
+    });
+}
+</script>
+</html>
