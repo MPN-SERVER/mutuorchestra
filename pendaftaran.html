@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pendaftaran - Mutu Orchestra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{
+  background:#0a0a0a;
+  color:white;
+  overflow-x:hidden;
+}
+
+h1,h2{font-family:'Playfair Display',serif;}
+
+.navbar{
+  padding:20px 80px;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:30px;
+}
+
+.hero{
+  height:60vh;
+  background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.7)),
+  url('https://images.unsplash.com/photo-1507874457470-272b3c8d8ee2') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:55px;
+  color:gold;
+}
+
+.section{
+  padding:100px 20px;
+  display:flex;
+  justify-content:center;
+}
+
+/* FORM GLASS */
+.form-box{
+  width:100%;
+  max-width:700px;
+  background:rgba(255,255,255,0.05);
+  padding:50px;
+  border-radius:30px;
+  backdrop-filter:blur(20px);
+  border:1px solid rgba(255,215,0,0.2);
+  box-shadow:0 0 60px rgba(255,215,0,0.15);
+}
+
+.form-box h2{
+  text-align:center;
+  margin-bottom:40px;
+  color:gold;
+}
+
+.input-group{
+  margin-bottom:25px;
+}
+
+.input-group label{
+  display:block;
+  margin-bottom:8px;
+  font-size:14px;
+  color:#ccc;
+}
+
+.input-group input,
+.input-group select,
+.input-group textarea{
+  width:100%;
+  padding:15px;
+  border-radius:15px;
+  border:none;
+  outline:none;
+  background:rgba(255,255,255,0.1);
+  color:rgb(248, 232, 3);
+  font-size:14px;
+}
+
+option {
+    background-color: #0a0a0a;
+}
+
+.input-group textarea{
+  resize:none;
+  height:100px;
+}
+
+.submit-btn{
+  width:100%;
+  padding:15px;
+  border-radius:30px;
+  border:none;
+  background:gold;
+  color:black;
+  font-weight:bold;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.submit-btn:hover{
+  background:white;
+}
+
+.success{
+  text-align:center;
+  margin-top:20px;
+  color:lightgreen;
+  display:none;
+}
+
+.footer{
+  text-align:center;
+  padding:40px;
+  background:black;
+  color:gray;
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2 style="color:gold;">Mutu Orchestra</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="struktur.html">Struktur</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Formulir Pendaftaran</h1>
+</div>
+
+<section class="section">
+  <div class="form-box">
+    <h2>Gabung Bersama Mutu Orchestra</h2>
+
+    <form id="daftarForm" onsubmit="kirimWA(event)">
+      
+      <div class="input-group" ">
+        <label>Nama Lengkap</label>
+        <input type="text"  id="nama" required>
+      </div>
+
+      <div class="input-group">
+        <label>Email</label>
+        <input type="email" id="email" required>
+      </div>
+
+      <div class="input-group">
+        <label>No WhatsApp</label>
+        <input type="text" id="wa" required>
+      </div>
+
+      <div class="input-group">
+        <label>Instrumen</label>
+        <select id="instrumen" required>
+          <option value="">Pilih Instrumen</option>
+          <option>Biola</option>
+          <option>Cello</option>
+          <option>Viola</option>
+          <option>Drummer</option>
+          <option>Keyboard</option>
+          <option>Gitar</option>
+          <option>Gitar Bass</option>
+          <option>Angklung</option>
+          <option>Gambang</option>
+          <option>Perkusion</option>
+          <option>Trumpet</option>
+        </select>
+      </div>
+
+      <div class="input-group">
+        <label>Pengalaman Bermain Musik</label>
+        <textarea id="pengalaman" placeholder="Ceritakan pengalaman kamu..."></textarea>
+      </div>
+
+      <button type="submit" class="submit-btn">Daftar Sekarang</button>
+      <div class="success">Pendaftaran berhasil dikirim 🎻✨</div>
+
+    </form>
+  </div>
+</section>
+
+<div class="footer">© 2026 Mutu Orchestra</div>
+
+<script>
+function kirimWA(e){
+    e.preventDefault();
+
+    let nama = document.getElementById("nama").value;
+    let email = document.getElementById("email").value;
+    let wa = document.getElementById("wa").value;
+    let instrumen = document.getElementById("instrumen").value;
+    let pengalaman = document.getElementById("pengalaman").value;
+
+    let nomor = "6289636017857"; 
+
+    let pesan = 
+    "Halo Mutu Orchestra 🎻%0A%0A" +
+    "Saya ingin mendaftar:%0A" +
+    "Nama: " + nama + "%0A" +
+    "Email: " + email + "%0A" +
+    "No WA: " + wa + "%0A" +
+    "Instrumen: " + instrumen + "%0A" +
+    "Pengalaman: " + pengalaman;
+
+    let url = "https://wa.me/" + nomor + "?text=" + pesan;
+
+    window.open(url, "_blank");
+}
+</script>
+
+</body>
+</html>

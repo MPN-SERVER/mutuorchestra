@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Struktur Organisasi - Mutu Orchestra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins',sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+}
+
+h1,h2,h3{
+  font-family:'Playfair Display',serif;
+}
+
+/* NAVBAR */
+.navbar{
+  padding:20px 80px;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:30px;
+}
+
+.page-header{
+  height:60vh;
+  background:linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.7)),
+  url('https://images.unsplash.com/photo-1464375117522-1311d6a5b81f') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+.page-header h1{
+  font-size:50px;
+  color:gold;
+}
+
+.section{
+  padding:120px 80px;
+}
+
+/* FILTER */
+.filter-container{
+  text-align:center;
+  margin-bottom:60px;
+}
+
+.filter-btn{
+  padding:10px 25px;
+  margin:8px;
+  border:1px solid gold;
+  background:transparent;
+  color:gold;
+  cursor:pointer;
+  border-radius:25px;
+  transition:0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover{
+  background:gold;
+  color:black;
+}
+
+/* GENERATION HERO */
+.generation-hero{
+  height:250px;
+  border-radius:25px;
+  margin:40px 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.generation-hero::before{
+  content:"";
+  position:absolute;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+}
+
+.generation-hero h2{
+  position:relative;
+  color:gold;
+  font-size:38px;
+}
+
+/* GRID */
+.structure-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.member-card{
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:25px;
+  text-align:center;
+  border:1px solid rgba(255,215,0,0.2);
+  transition:0.4s;
+  backdrop-filter:blur(10px);
+}
+
+.member-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 0 40px rgba(255,215,0,0.3);
+}
+
+.member-card img{
+  width:100%;
+  height:260px;
+  object-fit:cover;
+  border-radius:20px;
+  margin-bottom:15px;
+  transition:0.4s ease;
+}
+
+.member-card:hover img{
+  transform:scale(1.05);
+}
+
+.member-card h3{
+  font-size:20px;
+  margin-bottom:5px;
+}
+
+.member-card span{
+  font-size:14px;
+  color:gold;
+}
+
+.hidden{
+  display:none;
+}
+
+.footer{
+  text-align:center;
+  padding:40px;
+  background:black;
+  color:gray;
+}
+</style>
+</head>
+<body>
+
+<div class="navbar">
+  <h2 style="color:gold;">Mutu Orchestra</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="pendaftaran.html">Pendaftaran</a>
+  </div>
+</div>
+
+<section class="page-header">
+  <h1>Struktur Organisasi</h1>
+</section>
+
+<section class="section">
+
+  <!-- FILTER -->
+<div class="filter-container">
+  <button class="filter-btn active" data-filter="all">Semua</button>
+  <button class="filter-btn" data-filter="coach">Coach & Assistant Coach</button>
+  <button class="filter-btn" data-filter="gen10">Generasi 10</button>
+  <button class="filter-btn" data-filter="gen9">Generasi 9</button>
+  <button class="filter-btn" data-filter="gen8">Generasi 8</button>
+</div>
+
+<!-- COACH & ASSISTANT -->
+<div class="generation-block coach">
+  <div class="generation-hero" style="background:url('https://images.unsplash.com/photo-1507838153414-b4b713384a76') center/cover;">
+    <h2>Coach & Assistant Coach</h2>
+  </div>
+
+  <div class="structure-grid">
+
+    <div class="member-card">
+      <img src="Ft-anggota/WhatsApp Image 2026-01-21 at 20.51.56.jpeg">
+      <h3>M Akbar Mubarok S.Sn</h3>
+      <span>Head Coach</span>
+      <p>Memegang: Conductor</p>
+    </div>
+
+    <div class="member-card">
+      <img src="Ft-anggota/Rafa.jpeg">
+      <h3>Raffa Arrizky</h3>
+      <span>Assistant Coach</span>
+      <p>Memegang: All Band Instrumen</p>
+    </div>
+
+    <div class="member-card">
+      <img src="Ft-anggota/Muhammad Daffa Taufik Qurrohman.jpeg">
+      <h3>Muhammad Daffa Taufik Qurrohman</h3>
+      <span>Assistant Coach</span>
+      <p>Memegang: Cello</p>
+    </div>
+
+    <div class="member-card">
+      <img src="Ft-anggota/Erdhi Febrian Rusdinar.jpeg">
+      <h3>Erdhi Febrian Rusdinar</h3>
+      <span>Assistant Coach</span>
+      <p>Memegang: Violin</p>
+    </div>
+
+    <div class="member-card">
+      <img src="Ft-anggota/Rofi.jpeg">
+      <h3>Rofi Rosyid</h3>
+      <span>Assistant Coach</span>
+      <p>Memegang: All Biola</p>
+    </div>
+
+        <div class="member-card">
+      <img src="Ft-anggota/Abyan.jpeg">
+      <h3>Abyan Mutawally</h3>
+      <span>Assistant Coach</span>
+      <p>Memegang: Violin</p>
+    </div>
+
+  </div>
+</div>
+
+  <!-- GENERASI 10 -->
+  <div class="generation-block gen10">
+    <div class="generation-hero" style="background:url('https://images.unsplash.com/photo-1507838153414-b4b713384a76') center/cover;">
+      <h2>Generasi 10</h2>
+    </div>
+
+    <div class="structure-grid">
+      <div class="member-card">
+        <img src="Ft-anggota/IMG-20251107-WA0035.jpg">
+        <h3>Muhamad Pratama Aksena Saka Nugraha</h3>
+        <span><b>Cello</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/TABINA HYLMI RAMADHANI.jpeg">
+        <h3>TABINA HYLMI RAMADHANI</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/UMAY.jpeg">
+        <h3>Umair Hiromasa Khair</h3>
+        <span><b>Drummer</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/luthfiyah istifadah.jpeg">
+        <h3>Luthfiyah Istifadah</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Juniarti.jpeg">
+        <h3>Juniarti</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Lysti.jpeg">
+        <h3>Listya Linguistika</h3>
+        <span><b>Violin</b></span>
+    </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/riviana dwi ningtyas.jpeg">
+        <h3>Riviana Dwi Ningtyas</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/indahku dysta sakinah.jpeg">
+        <h3>Indahku Dysta Sakinah</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/safa aurora ramadhani.jpeg">
+        <h3>Safa Aurora Ramadhani</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Rindu nurfitriani rahayu.jpeg">
+        <h3>Rindu Nurfitriani Rahayu</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Muhammad Adam mufid.jpeg">
+        <h3>Muhammad Adam mufid</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Angelyn parkell.jpeg">
+        <h3>Angelyn Parkell</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Keysha Mulia Azzahra.jpeg">
+        <h3>Keysha Mulia Azzahra</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/siti adelia sulastri.jpeg">
+        <h3>Siti Adelia Sulastri</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/ini,shafira maharani prastya.jpeg">
+        <h3>Shafira Maharani Prastya</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Iqlima Nur Rahmania.jpeg">
+        <h3>Iqlima Nur Rahmania</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/alycia subaly.jpeg">
+        <h3>Alycia Subaly</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-anggota/Cindy dwi aulia putri .jpeg">
+        <h3>Cindy Dwi Aulia Putri</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/cinta hadi pratiwi.jpeg">
+        <h3>Cinta Hadi Pratiwi</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/Rainza Anindyta Ruswandi.jpeg">
+        <h3>Rainza Anindyta Ruswandi</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/Shofiyyah nabiilah purnama.jpeg">
+        <h3>Shofiyyah nabiilah purnama</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+                  <div class="member-card">
+        <img src="Ft-anggota/Jihan nur anjani.jpeg">
+        <h3>Jihan nur Anjani</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+                        <div class="member-card">
+        <img src="Ft-anggota/dinda latifatul zahra.jpeg">
+        <h3>Dinda Latifatul Zahra</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/SATRIA.jpeg">
+        <h3>Satria</h3>
+        <span><b>Angklung</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-anggota/sapta.jpeg">
+        <h3>Sapta Galih<h3>
+        <span><b>Vocal</b></span>
+      </div>
+
+                              <div class="member-card">
+        <img src="Ft-anggota/">
+        <h3>rehan?</h3>
+        <span><b>Keyboard</b></span>
+      </div>
+
+                              <div class="member-card">
+        <img src="Ft-anggota/Muhamad Syahrul Maulana.jpeg">
+        <h3>Muhamad Syahrul Maulana</h3>
+        <span><b>Keyboard</b></span>
+      </div>
+
+                              <div class="member-card">
+        <img src="Ft-anggota/RAHMA OKTAVIA.jpeg">
+        <h3>Rahma Oktavia</h3>
+        <span><b>Keyboard</b></span>
+      </div>
+
+
+
+    </div>
+  </div>
+
+  <!-- GENERASI 9 -->
+  <div class="generation-block gen9">
+    <div class="generation-hero" style="background:url('https://images.unsplash.com/photo-1525201548942-d8732f6617a0') center/cover;">
+      <h2>Generasi 9</h2>
+    </div>
+
+    <div class="structure-grid">
+      <div class="member-card">
+        <img src="Ft-anggota/Zahri.jpeg">
+        <h3>M Zahri Khuzayr</h3>
+        <span><b>Cello</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/satria wibawa madista.jpeg">
+        <h3>Satria Wibawa Madista</h3>
+        <span><b>Cello</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Ayu Ratna Nengsih Violin.jpeg">
+        <h3>Ayu Ratna Nengsih</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/Khaila Violin.jpeg">
+        <h3>Khaila</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/Sekar Lestari Violin.jpeg">
+        <h3>Sekar Lestari</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Dahlianti Maulana.jpeg">
+        <h3>Dahlianti Maulana</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/Siti Azzahra Violin.jpeg">
+        <h3>Siti Azzahra </h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/sifa nurlita - violin.jpeg">
+        <h3>Sifa Nurlita </h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/sapphira anggelena - violin.jpeg">
+        <h3>Sapphira Anggelena </h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/ratu chyka permaisari Violin.jpeg">
+        <h3>Ratu Chyka Permaisari </h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Naesyila Lusiana Caesaria Oktovani violin.jpeg">
+        <h3>Naesyila Lusiana Caesaria Oktovani </h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/tasya nasysyaroh Gambang.jpeg">
+        <h3>Tasya Nasysyaroh</h3>
+        <span><b>Gambang</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/tasha aulia putri Angklung.jpeg">
+        <h3>Tasha Aulia Putri</h3>
+        <span><b>Angklung</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Ajeng Rahmadini - Angklung.jpeg">
+        <h3>Ajeng Rahmadini</h3>
+        <span><b>Angklung</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/riska arif nur alifah Viola.jpeg">
+        <h3>Riska Arif Nur Alifah</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/Mellyana Mustika Viola.jpeg">
+        <h3>Mellyana Mustika</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Kalista Nur Alfira Sinta Dewi- Viola.jpeg">
+        <h3>Kalista Nur Alfira Sinta Dewi</h3>
+        <span><b>Viola</b></span>
+      </div>
+
+            <div class="member-card">
+        <img src="Ft-G9/atifha zahra Keyboar.jpeg">
+        <h3>Atifha Zahra</h3>
+        <span><b>Keyboard</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G9/Dimas Zaid Abdullah.jpeg">
+        <h3>Dimas Zaid Abdullah</h3>
+        <span><b>Keyboard</b></span>
+      </div>
+
+
+    </div>
+  </div>
+
+    <!-- GENERASI 8 -->
+  <div class="generation-block gen8">
+    <div class="generation-hero" style="background:url('https://images.unsplash.com/photo-1525201548942-d8732f6617a0') center/cover;">
+      <h2>Generasi 8</h2>
+    </div>
+
+    <div class="structure-grid">
+      <div class="member-card">
+        <img src="Ft-G8/syalsa putri violin.jpeg">
+        <h3>Syalsa Putri</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G8/Shafira Dian Ifarah - Violin.jpeg">
+        <h3>Shafira Dian Ifarah</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G8/selly novita-violin.jpeg">
+        <h3>Selly Novita</h3>
+        <span><b>Violin</b></span>
+      </div>
+
+      <div class="member-card">
+        <img src="Ft-G8/Ira novita viola.jpeg">
+        <h3>Ira Novita</h3>
+        <span><b>Viola</b></span>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<div class="footer">
+© 2026 Mutu Orchestra
+</div>
+
+<script>
+const buttons = document.querySelectorAll(".filter-btn");
+const generations = document.querySelectorAll(".generation-block");
+
+buttons.forEach(button=>{
+  button.addEventListener("click",function(){
+
+    buttons.forEach(btn=>btn.classList.remove("active"));
+    this.classList.add("active");
+
+    const filter = this.getAttribute("data-filter");
+
+    generations.forEach(gen=>{
+      if(filter === "all"){
+        gen.classList.remove("hidden");
+      } else {
+        if(gen.classList.contains(filter)){
+          gen.classList.remove("hidden");
+        } else {
+          gen.classList.add("hidden");
+        }
+      }
+    });
+
+  });
+});
+</script>
+
+</body>
+</html>

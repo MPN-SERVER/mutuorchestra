@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Galeri - Mutu Orchestra</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
+body{
+  background:#0a0a0a;
+  color:white;
+  overflow-x:hidden;
+}
+
+h1,h2{font-family:'Playfair Display',serif;}
+
+.navbar{
+  padding:20px 80px;
+  background:rgba(0,0,0,0.8);
+  position:fixed;
+  width:100%;
+  display:flex;
+  justify-content:space-between;
+  z-index:1000;
+}
+
+.navbar a{
+  color:white;
+  text-decoration:none;
+  margin-left:30px;
+}
+
+.hero{
+  height:60vh;
+  background:linear-gradient(rgba(0,0,0,.8),rgba(0,0,0,.7)),
+  url('https://images.unsplash.com/photo-1519681393784-d120267933ba') center/cover;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:55px;
+  color:gold;
+}
+
+.section{
+  padding:120px 80px;
+}
+
+/* GRID */
+.gallery-grid{
+  column-count:3;
+  column-gap:25px;
+}
+
+.gallery-item{
+  position:relative;
+  margin-bottom:25px;
+  cursor:pointer;
+  overflow:hidden;
+  border-radius:20px;
+}
+
+.gallery-item img{
+  width:100%;
+  border-radius:20px;
+  transition:0.5s;
+  display:block;
+}
+
+.gallery-item:hover img{
+  transform:scale(1.1);
+  filter:brightness(0.7);
+}
+
+.gallery-item::after{
+  content:"View";
+  position:absolute;
+  bottom:20px;
+  left:20px;
+  color:gold;
+  font-size:14px;
+  opacity:0;
+  transition:0.4s;
+}
+
+.gallery-item:hover::after{
+  opacity:1;
+}
+
+/* MODAL */
+.modal{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  opacity:0;
+  pointer-events:none;
+  transition:0.4s;
+}
+
+.modal img{
+  max-width:80%;
+  max-height:80%;
+  border-radius:20px;
+  box-shadow:0 0 50px rgba(255,215,0,0.3);
+}
+
+.modal.active{
+  opacity:1;
+  pointer-events:auto;
+}
+
+.close{
+  position:absolute;
+  top:40px;
+  right:60px;
+  font-size:40px;
+  color:white;
+  cursor:pointer;
+}
+
+.footer{
+  text-align:center;
+  padding:40px;
+  background:black;
+  color:gray;
+}
+
+@media(max-width:1000px){
+  .gallery-grid{column-count:2;}
+}
+
+@media(max-width:600px){
+  .gallery-grid{column-count:1;}
+}
+</style>
+</head>
+
+<body>
+
+<div class="navbar">
+  <h2 style="color:gold;">Mutu Orchestra</h2>
+  <div>
+    <a href="index.html">Home</a>
+    <a href="struktur.html">Struktur</a>
+  </div>
+</div>
+
+<div class="hero">
+  <h1>Galeri Mutu Orchestra</h1>
+</div>
+
+<section class="section">
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="Foto/FEHOS.jpg">
+    </div>
+    <div class="gallery-item">
+      <img src="Foto/WhatsApp Image 2026-02-10 at 16.51.29.jpeg">
+    </div>
+    <div class="gallery-item">
+      <img src="Foto/WhatsApp Image 2026-02-24 at 11.26.29 (1).jpeg">
+    </div>
+    <div class="gallery-item">
+      <img src="Foto/WhatsApp Image 2026-02-24 at 11.26.28.jpeg">
+    </div>
+    <div class="gallery-item">
+      <img src="Foto/Hut RI 80.jpg">
+    </div>
+        <div class="gallery-item">
+      <img src="Foto/Hut RI.jpg">
+    </div>
+        <div class="gallery-item">
+      <img src="Foto/Kementrian DALAM RUANGAN.jpg">
+    </div>
+        <div class="gallery-item">
+      <img src="Foto/WhatsApp Image 2026-02-24 at 11.26.31.jpeg">
+    </div>
+  </div>
+
+</section>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+  <span class="close" id="close">&times;</span>
+  <img id="modalImg">
+</div>
+
+<div class="footer">© 2026 Mutu Orchestra</div>
+
+<script>
+const items = document.querySelectorAll(".gallery-item img");
+const modal = document.getElementById("modal");
+const modalImg = document.getElementById("modalImg");
+const close = document.getElementById("close");
+
+items.forEach(img=>{
+  img.addEventListener("click",()=>{
+    modal.classList.add("active");
+    modalImg.src = img.src;
+  });
+});
+
+close.addEventListener("click",()=>{
+  modal.classList.remove("active");
+});
+
+modal.addEventListener("click",(e)=>{
+  if(e.target === modal){
+    modal.classList.remove("active");
+  }
+});
+</script>
+
+</body>
+</html>
